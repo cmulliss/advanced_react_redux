@@ -1,4 +1,16 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-import App from '../App'
+import { shallow } from 'enzyme'
+import App from 'components/App'
+import CommentBox from 'components/CommentBox'
+import CommentList from 'components/CommentList'
 
+it('shows a comment box', () => {
+  const wrapped = shallow(<App />)
+  // returns an array, so use length
+  expect(wrapped.find(CommentBox).length).toEqual(1)
+})
+it('shows a comment list', () => {
+  const wrapped = shallow(<App />)
+  expect(wrapped.find(CommentList).length).toEqual(1)
+})
+// created jsconfig.json to avoid awkward nesting
