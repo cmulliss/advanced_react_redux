@@ -10,3 +10,4 @@ export default () => {
     </div>
   )
 }
+// forEach is a helper fn provided by jest
